@@ -1,0 +1,31 @@
+{
+  "roles": [
+    {
+      "name": "admin",
+      "permissions": [
+        "create_record",
+        "read_record",
+        "update_record",
+        "delete_record"
+      ]
+    },
+    {
+      "name": "owner",
+      "permissions": [
+        "read_record"
+      ]
+    },
+    {
+      "name": "realtor",
+      "permissions": [
+        "read_record"
+      ]
+    },
+    {
+      "name": "renter",
+      "permissions": [
+        "read_record"
+      ]
+    }
+  ]
+}
