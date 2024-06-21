@@ -14,7 +14,7 @@ const realtySchema = new mongoose.Schema({
   street_number: { type: String, required: true },//Se precisar depois troca para Number
   complement: { type: String },
   postal_code: { type: String, required: true },//Se precisar depois troca para Number
-  images: [String],
+  images: {type:[String]},
   video: { type: String },
   publication_type: { type: String, required: true },
   list_price: { type: Number, required: true, default: 0 },

@@ -39,7 +39,7 @@ function Imoveis() {
       <div className="shadow w-full">
         {/* TÍTULO DA TABELA */}
         <div className="p-2.5 bg-slate-300 rounded-t-md grid grid-cols-12">
-          <div className="col-span-5">
+          <div className="col-span-7">
             <p>Imóvel</p>
           </div>
           <div className="col-span-2">
@@ -48,14 +48,23 @@ function Imoveis() {
           <div className="col-span-2">
             <p>Status</p>
           </div>
-          <div className="col-span-3">
+          <div className="col-span-1">
 
           </div>
         </div>
         {/* LINHAS DA TABELA */}
         {realties.length > 0 &&
           realties.map((realty) => (
-            <div className="p-2.5 bg-slate-200 grid grid-cols-12">
+            <div className="p-2.5 bg-slate-200 grid grid-cols-12 items-center">
+              <div className="col-span-2">
+                {realty.images.length > 0 ? (
+                  <img src={realty.images[0]} alt="imagem" className="w-24 rounded-md"/>
+                ) : (
+                  <img src="https://res.cloudinary.com/dxnkt6dvy/image/upload/v1718992676/property-placeholder_a9ec7710-1f1e-4654-9893-28c34e3b6399_600x_mgcz2h.jpg" alt="imagem" className="w-24 rounded-md"/>
+                )
+                }
+                
+              </div>
               <div className="col-span-5">
                 <p>{realty.address}</p>
               </div>
@@ -81,7 +90,7 @@ function Imoveis() {
                   <p className="w-fit py-1.5 px-2.5 bg-green-300 rounded-full flex items-center justify-center text-sm">{realty.status}</p>
                 }
               </div>
-              <div className="col-span-3 text-center">
+              <div className="col-span-1 text-center">
                 <button>
                   <Link to={`/dashboard/imoveis/${realty._id}`}>
                     <span className="text-JReal-200 underline">Detalhes</span>

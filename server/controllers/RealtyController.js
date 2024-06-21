@@ -45,6 +45,8 @@ module.exports = class RealtyController {
     const { warranties, features } = req.body
     //const userId = req.body.userId
 
+    //checa se foram enviadas mais de 10 imagens, o limite pode aumentar depois
+    //perguntar a Jairo 
     if (req.files.length > 10) {
       deleteLocalFiles(req.files)
       return res.status(422).json({ message: "Não é possível enviar mais de 10 imagens" })
@@ -107,6 +109,7 @@ module.exports = class RealtyController {
 
       //console.log(realty)
       await realty.save()
+      //deleta os arquivos que foram enviados da pasta uploads para não ocupar espaço no cloud 
       deleteLocalFiles(req.files)
       return res.status(201).json({ message: "Imóvel adicionado" })
     } catch (error) {

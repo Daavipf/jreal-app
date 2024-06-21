@@ -11,7 +11,7 @@ app.use(express.json())
 
 // Solve CORS
 //Aqui vem a url do frontend quando estiver no netlify
-app.use(cors({ credentials: true, origin: process.env.FRONTEND_URL }))
+app.use(cors({ credentials: false, origin: process.env.FRONTEND_URL }))
 
 // Public folder for images
 app.use(express.static('public'))
@@ -20,11 +20,11 @@ app.use(express.static('public'))
 const auth = require('./routes/auth')
 const user = require('./routes/user')
 const realty = require('./routes/realty')
-//const transfer = require('./routes/transfer')
+const transfer = require('./routes/transfer')
 app.use('/auth', auth)
 app.use('/user', user)
 app.use('/realty', realty)
-//app.use('/transfer', transfer)
+app.use('/transfer', transfer)
 
 //exports.handler = serverless(app)
 
