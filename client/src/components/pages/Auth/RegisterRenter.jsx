@@ -28,10 +28,10 @@ function Register() {
   }
 
   return (
-    <section className="w-screen h-screen bg-hero bg-cover flex flex-col items-center justify-center">
-      <div className="w-2/3 ">
+    <section className="w-screen md:h-screen py-6 bg-hero bg-cover flex flex-col items-center justify-center">
+      <div className="w-5/6 md:w-2/3 ">
         <h1 className="text-left text-xl font-semibold">Registrar-se como inquilino</h1>
-        <form onSubmit={handleSubmit} className="my-4 grid grid-cols-2 gap-4">
+        <form onSubmit={handleSubmit} className="my-4 flex flex-col md:grid md:grid-cols-2 gap-4">
           <input type="hidden" name="role" value="renter" />
           <Input type="text" name="name" text="Nome completo" placeholder="João Xavier da Silva" handleOnChange={handleChange} />
           <Input type="text" name="phone" text="Telefone" placeholder="(85) 91234-5678" handleOnChange={handleChange} />

@@ -24,13 +24,13 @@ function Login() {
 
   return (
     <section className="h-screen w-screen bg-hero bg-cover flex justify-center items-center" /*style={{ backgroundImage: `url(${bgImage})`, width: '100vw' }}*/>
-      <div className="w-2/3 flex justify-between">
-        <div className="w-1/2 flex flex-col justify-around">
-          <h1 className="text-center text-3xl">Sua nova experiência em gestão de imóveis</h1>
+      <div className="w-5/6 md:w-2/3 flex flex-col md:flex-row justify-between">
+        <div className="w-full md:w-1/2 flex flex-col items-center justify-around">
+          <h1 className="text-center text-xl md:text-3xl">Sua nova experiência em gestão de imóveis</h1>
           <img src={drawing} alt="imagem bacana" className="w-2/3" />
         </div>
-        <div className="w-1/2 flex justify-center">
-          <div className="h-full w-2/3 p-6 bg-white rounded-lg shadow-lg flex flex-col items-center justify-around">
+        <div className="w-full md:w-1/2 flex justify-center">
+          <div className="h-full w-full md:w-2/3 p-6 bg-white rounded-lg shadow-lg flex flex-col items-center justify-around">
             <h2 className="text-lg">Entre com sua conta</h2>
             <form onSubmit={handleSubmit} className="w-full flex flex-col gap-4">
               <Input type="email" name="email" placeholder="Digite o seu e-mail" handleOnChange={handleChange} />

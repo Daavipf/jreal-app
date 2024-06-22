@@ -10,7 +10,7 @@ import RealtyList from './components/RealtyList'
 function Home() {
   return (
     <section className='flex flex-col gap-4'>
-      <div className='grid grid-cols-3 gap-4'>
+      <div className='flex flex-col md:grid md:grid-cols-3 gap-4'>
         <div className='p-6 bg-white rounded-md shadow-md flex flex-col justify-between gap-3'>
           <div className='flex items-center gap-4'>
             <IconContext.Provider value={{ size: '24px', className: "global-class-name" }}>

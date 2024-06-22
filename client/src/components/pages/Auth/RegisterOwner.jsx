@@ -28,10 +28,10 @@ function Register() {
   }
 
   return (
-    <section className="w-screen h-screen bg-hero bg-cover flex flex-col items-center justify-center">
-      <div className="w-2/3 ">
+    <section className="w-screen py-6 bg-hero bg-cover flex flex-col items-center justify-center">
+      <div className="w-5/6 md:w-2/3 ">
         <h1 className="text-left text-xl font-semibold">Registrar-se como proprietário</h1>
-        <form onSubmit={handleSubmit} className="my-4 grid grid-cols-2 gap-4">
+        <form onSubmit={handleSubmit} className="my-4 flex flex-col md:grid md:grid-cols-2 gap-4">
           <input type="hidden" name="role" value="owner" />
           <Input type="text" name="name" text="Nome completo" placeholder="João Xavier da Silva" handleOnChange={handleChange} />
           <Input type="text" name="phone" text="Telefone" placeholder="(85) 91234-5678" handleOnChange={handleChange} />
@@ -39,7 +39,7 @@ function Register() {
           <Input type="date" name="birth_date" text="Data de nascimento" handleOnChange={handleChange} />
           <Input type="text" name="address" placeholder="Rua XV de Novembro, 123 - Centro, Fortaleza - CE" text="Endereço" handleOnChange={handleChange} />
           <Input type="email" name="email" text="E-mail" placeholder="joao.silva@gmail.com" handleOnChange={handleChange} />
-          <div className="my-6 py-4 border-y col-span-2 grid grid-cols-2 gap-4">
+          <div className="my-6 py-4 border-y flex flex-col col-span-2 md:grid md:grid-cols-2 gap-4">
             <Input type="text" name="bank" text="Banco" handleOnChange={handleChange} />
             <Input type="text" name="agency" text="Agência" handleOnChange={handleChange} />
             <Input type="text" name="account" text="Conta" handleOnChange={handleChange} />
