@@ -83,7 +83,6 @@ function Settings() {
     })
 
     setFlashMessage(data.message)
-
   }
 
   return (
@@ -153,34 +152,34 @@ function Settings() {
           </div>
         </Tabs.Item>
         <Tabs.Item title="Editar" icon={HiAdjustments}>
-          <div className="w-2/3 h-full overflow-auto">
+          <div className="md:w-2/3 h-full overflow-auto">
             <h2 className="text-left text-xl font-semibold">Informações pessoais</h2>
-            <form onSubmit={handleSubmitUserinfo} className="my-4 grid grid-cols-2 gap-4">
-              <Input type="text" name="name" text="Nome completo" value={user.name || ''} handleOnChange={handleChange} />
-              <Input type="text" name="phone" text="Telefone" value={user.phone || ''} handleOnChange={handleChange} />
-              <Input type="text" name="cpf_cnpj" text="CPF/CNPJ" value={user.cpf_cnpj || ''} handleOnChange={handleChange} />
-              <Input type="date" name="birth_date" text="Data de nascimento" value={user.birth_date} handleOnChange={handleChange} />
-              <Input type="text" name="address" placeholder="Nenhum endereço cadastrado" value={user.address || ''} text="Endereço" handleOnChange={handleChange} />
-              <Input type="email" name="email" text="E-mail" value={user.email || ''} handleOnChange={handleChange} />
+            <form onSubmit={handleSubmitUserinfo} className="my-4 flex flex-col md:grid md:grid-cols-2 gap-4">
+              <Input type="text" name="name" text="Nome completo" defaultValue={user.name || ''} handleOnChange={handleChange} />
+              <Input type="text" name="phone" text="Telefone" defaultValue={user.phone || ''} handleOnChange={handleChange} />
+              <Input type="text" name="cpf_cnpj" text="CPF/CNPJ" defaultValue={user.cpf_cnpj || ''} handleOnChange={handleChange} />
+              <Input type="date" name="birth_date" text="Data de nascimento" defaultValue={user.birth_date} handleOnChange={handleChange} />
+              <Input type="text" name="address" placeholder="Nenhum endereço cadastrado" defaultValue={user.address || ''} text="Endereço" handleOnChange={handleChange} />
+              <Input type="email" name="email" text="E-mail" defaultValue={user.email || ''} handleOnChange={handleChange} />
 
               <Input type="password" name="password" text="Senha" placeholder="*************" handleOnChange={handleChange} />
               <Input type="password" name="confirmPassword" text="Confirme a sua senha" placeholder="*************" handleOnChange={handleChange} />
-              {user.role === "realtor" ?
+              {user.role === "realtor" || user.role === "admin" ?
                 <div className="py-4 mt-4 border-t col-span-2 grid grid-cols-2 gap-4">
                   <h2 className="col-span-2 text-left text-xl font-semibold">Informações de corretor</h2>
-                  <Input type="number" name="creci_number" text="Número Creci" value={user.creci_number} handleOnChange={handleChange} />
-                  <Input type="date" name="creci_expiration" text="Data de validade do Creci" value={user.creci_expiration} handleOnChange={handleChange} />
+                  <Input type="number" name="creci_number" text="Número Creci" defaultValue={user.creci_number} handleOnChange={handleChange} />
+                  <Input type="date" name="creci_expiration" text="Data de validade do Creci" defaultValue={user.creci_expiration} handleOnChange={handleChange} />
                 </div>
                 : null}
               <button type="submit" className="w-40 p-2.5 mt-8 self-center bg-JReal-200 hover:bg-JReal-100 rounded-lg text-gray-100 hover:text-gray-700 transition-colors">Atualizar</button>
             </form>
           </div>
         </Tabs.Item>
-        {user.role === "owner" || user.role === "realtor" ?
+        {user.role === "owner" || user.role === "realtor" || user.role === "admin" ?
           <Tabs.Item title="Pagamento" icon={PiCurrencyDollarSimpleFill}>
             <div className="w-2/3 h-full overflow-auto">
               <h2 className="text-left text-xl font-semibold">Informações bancárias</h2>
-              <form onSubmit={handleSubmitBankingData} className="my-4 grid grid-cols-2 gap-4">
+              <form onSubmit={handleSubmitBankingData} className="my-4 flex flex-col md:grid md:grid-cols-2 gap-4">
 
                 <Input type="text" name="bank" text="Banco" handleOnChange={handleChange} />
                 <Input type="text" name="agency" text="Agência" handleOnChange={handleChange} />

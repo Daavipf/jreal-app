@@ -1,6 +1,6 @@
 import { Dropdown } from "flowbite-react"
 import profilePicture from '../../assets/img/Profile.svg'
-import logo from '../../assets/img/Logo 2.png'
+import logo from '../../assets/img/Logo 1.png'
 import { Link } from "react-router-dom"
 
 import { useContext, useState, useEffect } from "react"
@@ -24,15 +24,15 @@ function Profile() {
 
   return (
     <div className="px-2.5 flex justify-between">
-      <img src={logo} alt="logo" width={'100px'} className="flex md:hidden bg-white"/>
+      <img src={logo} alt="logo" width={'120px'} className="m-2 block md:hidden"/>
       <div className="flex items-center justify-end md:justify-between gap-2 md:gap-6">
         
-        <div className="py-2.5 px-6 md:bg-white md:rounded-full md:shadow flex">
+        <div className="py-2.5 md:px-6 md:bg-white md:rounded-full md:shadow flex">
           <div>
             <h3 className="text-sm text-white md:text-gray-700">{user.name}</h3>
             <h4 className="text-xs text-white md:text-gray-700">{user.email}</h4>
           </div>
-          <Dropdown label="" className="text-white md:text-gray-700" inline>
+          <Dropdown label="" className="text-white  md:text-gray-700" inline>
             <Dropdown.Item>
               <Link to={'/dashboard/settings'}>Conta</Link>
             </Dropdown.Item>

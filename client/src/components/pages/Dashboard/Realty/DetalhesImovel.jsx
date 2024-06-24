@@ -81,6 +81,7 @@ function DetalhesImovel() {
           </Modal>
         </AdminComponent>
       </div>
+
       <Tabs aria-label="Tabs of realty visualization" style={underline.underline}>
         <Tabs.Item active title="Repasses" >
           <div className="flex flex-col">
@@ -142,7 +143,7 @@ function DetalhesImovel() {
         </Tabs.Item>
         <Tabs.Item title="Anúncio">
           <AdminComponent>
-            <div className="w-2/3 grid grid-cols-3 gap-2">
+            <div className="w-full md:w-2/3 grid grid-cols-3 gap-2">
               <div>
                 <h3 className="text-gray-500">ID</h3>
                 <p className="text-lg">{realty.listing_id}</p>
@@ -156,7 +157,7 @@ function DetalhesImovel() {
                 <p className="text-lg">{realty.description}</p>
               </div>
             </div>
-            <div className="w-2/3 py-6 grid grid-cols-3 gap-2">
+            <div className="w-full md:w-2/3 py-6 grid grid-cols-3 gap-2">
               <div className="">
                 <h3 className="text-gray-500">Endereço</h3>
                 <p className="text-lg">{realty.address}</p>
@@ -196,7 +197,7 @@ function DetalhesImovel() {
                 <p className="text-lg">{realty.country}</p>
               </div>
             </div>
-            <div className="w-2/3 py-6 grid grid-cols-3 gap-2">
+            <div className="w-full md:w-2/3 py-6 grid grid-cols-2 md:grid-cols-3 gap-2">
               <div>
                 <h3 className="text-gray-500">Tipo de Transação</h3>
                 <p className="text-lg">{realty.transaction_type}</p>
@@ -234,7 +235,7 @@ function DetalhesImovel() {
                 <p className="text-lg">{Number(realty.admin_fee).toLocaleString("pt-BR", { style: "currency", currency: "BRL" })}</p>
               </div>
             </div>
-            <div className="w-2/3 py-6 grid grid-cols-4 gap-2">
+            <div className="w-full md:w-2/3 py-6 grid grid-cols-3 md:grid-cols-4 gap-2">
               <div>
                 <h3 className="text-gray-500">Tipo de Utilização</h3>
                 <p className="text-lg">{realty.usage_type}</p>
@@ -292,7 +293,7 @@ function DetalhesImovel() {
                 : null
               }
             </div>
-            <div className="w-2/3 py-6 grid grid-cols-2 gap-2">
+            <div className="w-full md:w-2/3 py-6 grid grid-cols-2 gap-2">
               {realty.video ?
                 <div>
                   <h3 className="text-gray-500">Vídeo do Youtube</h3>

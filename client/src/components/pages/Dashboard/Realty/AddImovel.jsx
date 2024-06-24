@@ -93,7 +93,7 @@ function AddImovel() {
       <form onSubmit={handleSubmit} className="">
         <input type="hidden" name="userId" value={user._id} />
         <input type="file" multiple onChange={handleFileChange} />
-        <div className="grid grid-cols-3 gap-2">
+        <div className="flex flex-col md:grid md:grid-cols-3 gap-2">
           <div>
             <label htmlFor="title" className="">Título</label>
             <input required type="text" name="title" onChange={handleChange} className="w-full p-2.5 bg-transparent border-slate-200 rounded-full text-gray-600 placeholder:text-gray-400 focus:border-slate-200 focus:outline-transparent focus:ring-0" />
@@ -118,7 +118,7 @@ function AddImovel() {
             <textarea required name="description" id="" className="w-full p-2.5 bg-transparent border-slate-200 rounded-lg text-gray-600 placeholder:text-gray-400 focus:border-slate-200 focus:outline-transparent focus:ring-0"></textarea>
           </div>
         </div>
-        <div className="py-8 grid grid-cols-3 gap-2">
+        <div className="py-8 flex flex-col md:grid md:grid-cols-3 gap-2">
           <div>
             <label htmlFor="address" className="">Rua</label>
             <input required type="text" name="address" onChange={handleChange} className="w-full p-2.5 bg-transparent border-slate-200 rounded-full text-gray-600 placeholder:text-gray-400 focus:border-slate-200 focus:outline-transparent focus:ring-0" />
@@ -184,7 +184,7 @@ function AddImovel() {
             <input required type="text" name="country" defaultValue="Brasil" onChange={handleChange} className="w-full p-2.5 bg-transparent border-slate-200 rounded-full text-gray-600 placeholder:text-gray-400 focus:border-slate-200 focus:outline-transparent focus:ring-0" />
           </div>
         </div>
-        <div className="py-8 grid grid-cols-3 gap-2">
+        <div className="py-8 flex flex-col md:grid md:grid-cols-3 gap-2">
           <div>
             <label htmlFor="transaction_type">Tipo de Transação</label>
             <select name="transaction_type" id="transaction_type" className="w-full p-2.5 bg-transparent border-slate-200 rounded-full text-gray-600 placeholder:text-gray-400 focus:border-slate-200 focus:outline-transparent focus:ring-0">
@@ -210,7 +210,7 @@ function AddImovel() {
             <input type="number" name="iptu" defaultValue={0} onChange={handleChange} className="w-full p-2.5 bg-transparent border-slate-200 rounded-full text-gray-600 placeholder:text-gray-400 focus:border-slate-200 focus:outline-transparent focus:ring-0" />
           </div>
         </div>
-        <div className="py-8 grid grid-cols-4 gap-2">
+        <div className="py-8 flex flex-col md:grid md:grid-cols-4 gap-2">
           <div>
             <label htmlFor="usage_type">Tipo de Utilização</label>
             <select name="usage_type" id="usage_type" className="w-full p-2.5 bg-transparent border-slate-200 rounded-full text-gray-600 placeholder:text-gray-400 focus:border-slate-200 focus:outline-transparent focus:ring-0">
@@ -1317,7 +1317,7 @@ function AddImovel() {
             </div>
           </div>
         </div>
-        <div className="py-8 grid grid-cols-3 gap-2">
+        <div className="py-8 flex flex-col md:grid md:grid-cols-3 gap-2">
           <div>
             <label htmlFor="video" className="">Vídeo do Youtube</label>
             <input type="text" name="video" defaultValue={realty.video} onChange={handleChange} className="w-full p-2.5 bg-transparent border-slate-200 rounded text-gray-600 placeholder:text-gray-400 focus:border-slate-200 focus:outline-transparent focus:ring-0" />

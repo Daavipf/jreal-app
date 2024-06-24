@@ -38,14 +38,14 @@ function Imoveis() {
       {/* TABELA */}
       <div className="shadow w-full">
         {/* TÍTULO DA TABELA */}
-        <div className="p-2.5 bg-slate-300 rounded-t-md grid grid-cols-12">
-          <div className="col-span-7">
+        <div className="p-2.5 bg-JReal-200 rounded-t-md hidden md:grid md:grid-cols-12">
+          <div className="col-span-4 md:col-span-7">
             <p>Imóvel</p>
           </div>
-          <div className="col-span-2">
+          <div className="md:col-span-2">
             <p>Valor</p>
           </div>
-          <div className="col-span-2">
+          <div className="md:col-span-2">
             <p>Status</p>
           </div>
           <div className="col-span-1">
@@ -55,8 +55,8 @@ function Imoveis() {
         {/* LINHAS DA TABELA */}
         {realties.length > 0 &&
           realties.map((realty) => (
-            <div className="p-2.5 bg-slate-200 grid grid-cols-12 items-center">
-              <div className="col-span-2">
+            <div className="p-2.5 border-b border-slate-200 bg-white flex flex-col md:grid md:grid-cols-12 md:items-center text-white">
+              <div className="col-span-1 md:col-span-2">
                 {realty.images.length > 0 ? (
                   <img src={realty.images[0]} alt="imagem" className="w-24 rounded-md"/>
                 ) : (
@@ -65,32 +65,34 @@ function Imoveis() {
                 }
                 
               </div>
-              <div className="col-span-5">
-                <p>{realty.address}</p>
+              <div className="md:col-span-5">
+                <p classsName="ml-3 md:ml-0">{realty.address}</p>
               </div>
-              <div className="col-span-2">
+              <div className="md:col-span-2">
+                <span className="inline md:hidden">Valor: </span>
                 {realty.transaction_type === "For Sale" &&
-                  <p>V - {Number(realty.list_price).toLocaleString("pt-BR", { style: "currency", currency: "BRL" })}</p>
+                  <span>V - {Number(realty.list_price).toLocaleString("pt-BR", { style: "currency", currency: "BRL" })}</span>
                 }
                 {realty.transaction_type === "For Rent" &&
-                  <p>A - {Number(realty.rental_price).toLocaleString("pt-BR", { style: "currency", currency: "BRL" })}</p>
+                  <span>A - {Number(realty.rental_price).toLocaleString("pt-BR", { style: "currency", currency: "BRL" })}</span>
                 }
                 {realty.transaction_type === "Sale/Rent" &&
                   <>
-                    <p>V - {Number(realty.list_price).toLocaleString("pt-BR", { style: "currency", currency: "BRL" })}</p>
-                    <p>A - {Number(realty.rental_price).toLocaleString("pt-BR", { style: "currency", currency: "BRL" })}</p>
+                    <span>V - {Number(realty.list_price).toLocaleString("pt-BR", { style: "currency", currency: "BRL" })}</span>
+                    <span>A - {Number(realty.rental_price).toLocaleString("pt-BR", { style: "currency", currency: "BRL" })}</span>
                   </>
                 }
               </div>
-              <div className="col-span-2">
+              <div className="md:col-span-2">
+                <span className="inline md:hidden">Status: </span>
                 {realty.status === "Disponível" &&
-                  <p className="w-fit py-1.5 px-2.5 bg-gray-300 rounded-full flex items-center justify-center text-sm">{realty.status}</p>
+                  <span className="w-fit py-1.5 px-2.5 bg-gray-300 rounded-full inline-block md:flex items-center justify-center text-sm">{realty.status}</span>
                 }
                 {realty.status === "Ocupado" &&
-                  <p className="w-fit py-1.5 px-2.5 bg-green-300 rounded-full flex items-center justify-center text-sm">{realty.status}</p>
+                  <span className="w-fit py-1.5 px-2.5 bg-green-300 rounded-full inline-block md:flex items-center justify-center text-sm">{realty.status}</span>
                 }
               </div>
-              <div className="col-span-1 text-center">
+              <div className="col-span-1 md:text-center">
                 <button>
                   <Link to={`/dashboard/imoveis/${realty._id}`}>
                     <span className="text-JReal-200 underline">Detalhes</span>

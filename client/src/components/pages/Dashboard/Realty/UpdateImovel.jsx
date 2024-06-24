@@ -102,7 +102,7 @@ function UpdateRealty() {
 
   return (
     <section className="flex flex-col">
-      <div className="mb-8 self-end flex gap-8">
+      <div className="mb-8 self-start md:self-end flex flex-col md:flex-row gap-8">
         <form onSubmit={
           async (e) => {
             e.preventDefault()
@@ -168,7 +168,7 @@ function UpdateRealty() {
       </div>
 
       <form onSubmit={handleSubmit} className="">
-        <div className="grid grid-cols-3 gap-2">
+        <div className="flex flex-col md:grid md:grid-cols-3 gap-2">
           <div>
             <label htmlFor="title" className="">Título</label>
             <input type="text" name="title" defaultValue={realty.title} onChange={handleChange} className="w-full p-2.5 bg-transparent border-slate-200 rounded-full text-gray-600 placeholder:text-gray-400 focus:border-slate-200 focus:outline-transparent focus:ring-0" />
@@ -194,7 +194,7 @@ function UpdateRealty() {
             <textarea name="description" defaultValue={realty.description} className="w-full p-2.5 bg-transparent border-slate-200 rounded-lg text-gray-600 placeholder:text-gray-400 focus:border-slate-200 focus:outline-transparent focus:ring-0"></textarea>
           </div>
         </div>
-        <div className="py-8 grid grid-cols-3 gap-2">
+        <div className="py-8 flex flex-col md:grid md:grid-cols-3 gap-2">
           <div>
             <label htmlFor="address" className="">Rua</label>
             <input type="text" name="address" defaultValue={realty.address} onChange={handleChange} className="w-full p-2.5 bg-transparent border-slate-200 rounded-full text-gray-600 placeholder:text-gray-400 focus:border-slate-200 focus:outline-transparent focus:ring-0" />
@@ -234,7 +234,7 @@ function UpdateRealty() {
             <input type="text" name="country" defaultValue="Brasil" onChange={handleChange} className="w-full p-2.5 bg-transparent border-slate-200 rounded-full text-gray-600 placeholder:text-gray-400 focus:border-slate-200 focus:outline-transparent focus:ring-0" />
           </div>
         </div>
-        <div className="py-8 grid grid-cols-3 gap-2">
+        <div className="py-8 flex flex-col md:grid md:grid-cols-3 gap-2">
           <div>
             <label htmlFor="transaction_type">Tipo de Transação</label>
             <select name="transaction_type" id="transaction_type" className="w-full p-2.5 bg-transparent border-slate-200 rounded-full text-gray-600 placeholder:text-gray-400 focus:border-slate-200 focus:outline-transparent focus:ring-0">
@@ -261,7 +261,7 @@ function UpdateRealty() {
             <input type="number" name="iptu" defaultValue={realty.iptu} onChange={handleChange} className="w-full p-2.5 bg-transparent border-slate-200 rounded-full text-gray-600 placeholder:text-gray-400 focus:border-slate-200 focus:outline-transparent focus:ring-0" />
           </div>
         </div>
-        <div className="py-8 grid grid-cols-4 gap-2">
+        <div className="py-8 flex flex-col md:grid md:grid-cols-4 gap-2">
           <div>
             <label htmlFor="usage_type">Tipo de Utilização</label>
             <select name="usage_type" id="usage_type" className="w-full p-2.5 bg-transparent border-slate-200 rounded-full text-gray-600 placeholder:text-gray-400 focus:border-slate-200 focus:outline-transparent focus:ring-0">
@@ -1370,7 +1370,7 @@ function UpdateRealty() {
             </div>
           </div>
         </div>
-        <div className="py-8 grid grid-cols-3 gap-2">
+        <div className="py-8 flex flex-col md:grid md:grid-cols-3 gap-2">
           <div>
             <label htmlFor="video" className="">Vídeo do Youtube</label>
             <input type="text" name="video" defaultValue={realty.video} onChange={handleChange} className="w-full p-2.5 bg-transparent border-slate-200 rounded-full text-gray-600 placeholder:text-gray-400 focus:border-slate-200 focus:outline-transparent focus:ring-0" />

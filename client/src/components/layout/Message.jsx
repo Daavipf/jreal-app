@@ -17,7 +17,7 @@ function Message() {
   }, [])
   return (
     visibility && (
-      <div className="w-fit p-2.5 fixed bottom-10 left-52 z-10 bg-JReal-200 rounded-lg text-white">
+      <div className="w-fit p-2.5 fixed bottom-10 left-52 z-10 bg-JReal-200 rounded-lg text-white text-xs md:text-base">
         <p>{message}</p>
       </div>
     )
