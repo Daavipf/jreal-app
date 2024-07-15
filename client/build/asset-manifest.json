@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/static/css/main.e436409b.css",
+    "main.js": "/static/js/main.c0968641.js",
+    "static/media/renter.svg": "/static/media/renter.1f52103c4a1e96585af9707fde5d7012.svg",
+    "static/media/login-img.svg": "/static/media/login-img.c6cfb909c73ec2e72f2900f7bbb45643.svg",
+    "static/media/background-login.jpg": "/static/media/background-login.6144c61a83cd74db7f50.jpg",
+    "static/media/owner.svg": "/static/media/owner.411dec0d0363a4e36991ca24ddf183f4.svg",
+    "static/media/realtor.svg": "/static/media/realtor.449dac93f289ddc121dc0680ec4b2f4c.svg",
+    "static/media/Forgot password-rafiki.svg": "/static/media/Forgot password-rafiki.9b3a0a2beab9ac5c9dd5cfdbcbe14be1.svg",
+    "static/media/Logo 1.png": "/static/media/Logo 1.b889d51b5b9215925bbb.png",
+    "static/media/Logo 2.png": "/static/media/Logo 2.f528ae6ffa49abab9757.png",
+    "index.html": "/index.html",
+    "static/media/Profile.svg": "/static/media/Profile.14de98965e73f2eb9a8dc7960bc904cd.svg",
+    "main.e436409b.css.map": "/static/css/main.e436409b.css.map",
+    "main.c0968641.js.map": "/static/js/main.c0968641.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e436409b.css",
+    "static/js/main.c0968641.js"
+  ]
+}

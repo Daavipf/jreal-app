@@ -38,7 +38,7 @@ function Imoveis() {
       {/* TABELA */}
       <div className="shadow w-full">
         {/* TÍTULO DA TABELA */}
-        <div className="p-2.5 bg-JReal-200 rounded-t-md hidden md:grid md:grid-cols-12">
+        <div className="p-2.5 bg-JReal-200 rounded-t-md hidden md:grid md:grid-cols-12 text-white">
           <div className="col-span-4 md:col-span-7">
             <p>Imóvel</p>
           </div>
@@ -55,15 +55,15 @@ function Imoveis() {
         {/* LINHAS DA TABELA */}
         {realties.length > 0 &&
           realties.map((realty) => (
-            <div className="p-2.5 border-b border-slate-200 bg-white flex flex-col md:grid md:grid-cols-12 md:items-center text-white">
+            <div className="p-2.5 border-b border-slate-200 bg-white flex flex-col md:grid md:grid-cols-12 md:items-center">
               <div className="col-span-1 md:col-span-2">
                 {realty.images.length > 0 ? (
-                  <img src={realty.images[0]} alt="imagem" className="w-24 rounded-md"/>
+                  <img src={realty.images[0]} alt="imagem" className="w-24 rounded-md" />
                 ) : (
-                  <img src="https://res.cloudinary.com/dxnkt6dvy/image/upload/v1718992676/property-placeholder_a9ec7710-1f1e-4654-9893-28c34e3b6399_600x_mgcz2h.jpg" alt="imagem" className="w-24 rounded-md"/>
+                  <img src="https://res.cloudinary.com/dxnkt6dvy/image/upload/v1718992676/property-placeholder_a9ec7710-1f1e-4654-9893-28c34e3b6399_600x_mgcz2h.jpg" alt="imagem" className="w-24 rounded-md" />
                 )
                 }
-                
+
               </div>
               <div className="md:col-span-5">
                 <p classsName="ml-3 md:ml-0">{realty.address}</p>
@@ -78,8 +78,8 @@ function Imoveis() {
                 }
                 {realty.transaction_type === "Sale/Rent" &&
                   <>
-                    <span>V - {Number(realty.list_price).toLocaleString("pt-BR", { style: "currency", currency: "BRL" })}</span>
-                    <span>A - {Number(realty.rental_price).toLocaleString("pt-BR", { style: "currency", currency: "BRL" })}</span>
+                    <p>V - {Number(realty.list_price).toLocaleString("pt-BR", { style: "currency", currency: "BRL" })}</p>
+                    <p>A - {Number(realty.rental_price).toLocaleString("pt-BR", { style: "currency", currency: "BRL" })}</p>
                   </>
                 }
               </div>
