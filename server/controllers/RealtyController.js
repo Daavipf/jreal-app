@@ -54,7 +54,7 @@ module.exports = class RealtyController {
 
     //upload das imagens que vem no req.files para o cloudinary, armazenamento de imagens na nuvem
     const uploadPromises = req.files.map(file => {
-      return cloudinary.uploader.upload(file.path, { folder: 'public/images' })
+      return cloudinary.uploader.upload(file.path, { folder: '/tmp' })
     })
 
     //Validações

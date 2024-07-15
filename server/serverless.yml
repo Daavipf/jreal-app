@@ -1,0 +1,46 @@
+# "org" ensures this Service is used with the correct Serverless Framework Access Key.
+org: davidev
+# "service" is the name of this project. This will also be added to your AWS resource names.
+service: deploy-test
+
+provider:
+  name: aws
+  runtime: nodejs20.x
+  region: us-east-1
+
+functions:
+  api:
+    handler: index.handler
+    events:
+      - http:
+          path: /
+          method: ANY
+          cors:
+            origin: '*'
+            headers:
+              - Content-Type
+              - Token
+              - token
+              - X-Amz-Date
+              - Authorization
+              - Access-Control-Allow-Origin
+              - X-Api-Key
+              - X-Amz-Security-Token
+              - X-Amz-User-Agent
+            allowCredentials: false
+      - http:
+          path: /{proxy+}
+          method: ANY
+          cors:
+            origin: '*'
+            headers:
+              - Content-Type
+              - Token
+              - token
+              - X-Amz-Date
+              - Authorization
+              - Access-Control-Allow-Origin
+              - X-Api-Key
+              - X-Amz-Security-Token
+              - X-Amz-User-Agent
+            allowCredentials: false
